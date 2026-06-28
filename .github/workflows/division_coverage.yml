@@ -25,11 +25,11 @@ jobs:
       run: |
        pytest test_division.py test_multiply.py --cov=myapp --cov-report=html
        
-    - name: Commit and Push HTML Coverage Report
-      run: |
-       git config --global user.name "github-actions[bot]"
-       git config --global user.email "github-actions[bot]@users.noreply.github.com"
-       git add htmlcov/    
+    - name: Upload Coverage
+      uses: actions/upload-artifact@v4
+      with:
+       name: coverage-report
+       path: htmlcov/   
  
    
 
