@@ -22,9 +22,13 @@ jobs:
 
     - name: Run pytest
       run: |
-       pytest test_division.py test_multiply.py --cov=myapp --cov-report=term-missing
+       pytest test_division.py test_multiply.py --cov=myapp --cov-report=html
        
-        
+    - name: Commit and Push HTML Coverage Report
+      run: |
+       git config --global user.name "github-actions[bot]"
+       git config --global user.email "github-actions[bot]@://github.com"
+       git add htmlcov/    
  
    
 
