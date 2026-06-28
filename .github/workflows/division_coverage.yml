@@ -1,0 +1,30 @@
+name: pytest to test the divsion
+
+on: 
+ workflow_dispatch:
+
+jobs:
+  code_chek_out:
+   runs-on: ubuntu-latest
+   steps:
+    - name: Checkout repository code
+      uses: actions/checkout@v4
+
+    - name: setting up python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: installing pytest
+      run: |
+       python -m pip install --upgrade pip
+       pip install pytest
+
+    - name: Run pytest
+      run: |
+       pytest --cov=. --cov-report=term-missing
+       
+        
+ 
+   
+
