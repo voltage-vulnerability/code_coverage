@@ -2,7 +2,8 @@ name: pytest to test the divsion
 
 on: 
  workflow_dispatch:
-
+permissions: 
+  contents: write
 jobs:
   code_chek_out:
    runs-on: ubuntu-latest
