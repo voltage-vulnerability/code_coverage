@@ -22,7 +22,7 @@ jobs:
 
     - name: Run pytest
       run: |
-       pytest --cov=. --cov-report=term-missing
+       pytest --cov=myapp.py --cov-report=term-missing
        
         
  
